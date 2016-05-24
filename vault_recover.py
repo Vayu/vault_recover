@@ -74,6 +74,7 @@ def scan_addr_range(pid, addr_lo, addr_hi, name, check, try_harder=False):
                 return key, plaintext
             except InvalidTag:
                 pass
+    return None, None
 
 
 def get_check_func(entry):
@@ -131,6 +132,7 @@ def main():
                 logging.info('Key {0}'.format(key.encode('hex')))
                 logging.info('Plaintext {0}'.format(plaintext))
                 return
+    logging.info('Key not found')
 
 
 if __name__ == '__main__':
