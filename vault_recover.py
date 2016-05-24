@@ -112,7 +112,7 @@ def main():
     args = parser.parse_args()
 
     if args.pid:
-        procs = [args.pid]
+        procs = [(args.pid, 0)]
     else:
         procs = running_procs('vault')
         if not procs:
